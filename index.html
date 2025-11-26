@@ -1,1 +1,90 @@
-y12 stuff
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background: #333;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: block;
+        }
+        nav a:hover {
+            background: #444;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h2 {
+            color: #333;
+        }
+        .project-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .project-list li {
+            background: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <p>Robotics | Watch Building | Music</p>
+    </header>
+
+    <nav>
+        <a href="#robotics">Robotics</a>
+        <a href="#watches">Watch Building</a>
+        <a href="#music">Music</a>
+    </nav>
+
+    <div class="container">
+        <section id="robotics">
+            <h2>Robotics Projects</h2>
+            <div class="project-list">
+                <ul>
+                    <li><strong>RFID Key Controlled Lock</strong><br>A servo‑powered locking system activated using RFID security tags.</li>
+                    <li><strong>Custom‑Built Taser</strong><br>Designed and built using a voltage multiplier and a custom 3D‑printed CAD case.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="watches">
+            <h2>Watch Building</h2>
+            <p>I co‑founded a watch business where we use Seiko parts to build custom watches made to order.</p>
+        </section>
+
+        <section id="music">
+            <h2>Music</h2>
+            <p>Coming soon...</p>
+        </section>
+    </div>
+</body>
+</html>
+
