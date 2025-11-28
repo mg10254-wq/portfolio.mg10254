@@ -3,82 +3,121 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Matteo Ghorayeb — Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
+            background: linear-gradient(135deg, #b5d3ff, #eef1f5);
+            animation: fadeIn 1.2s ease;
         }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         header {
-            background: #222;
+            background: linear-gradient(135deg, #1e1e1e, #444);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            animation: slideDown 1s ease;
         }
+        @keyframes slideDown { from { transform: translateY(-40px); opacity: 0;} to { transform: translateY(0); opacity:1;} }
         nav {
-            background: #333;
+            background: #222;
             display: flex;
             justify-content: center;
+            gap: 10px;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 20;
         }
         nav a {
             color: white;
-            padding: 14px 20px;
+            padding: 12px 18px;
             text-decoration: none;
-            display: block;
+            border-radius: 6px;
+            transition: 0.25s ease;
+            background: linear-gradient(90deg,#2b2b2b,#3b3b3b);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
         nav a:hover {
-            background: #444;
+            background: linear-gradient(90deg,#6a8cff,#4f6eff);
+            transform: translateY(-2px) scale(1.03);
         }
         .container {
-            padding: 20px;
-            max-width: 800px;
+            padding: 25px;
+            max-width: 900px;
             margin: auto;
         }
+        /* Sections hidden by default; home shown on load via JS */
+        section { display: none; animation: fadeIn 0.8s ease; }
         h2 {
-            color: #333;
-        }
-        .project-list ul {
-            list-style: none;
-            padding: 0;
+            color: #222;
+            border-left: 5px solid #6a8cff;
+            padding-left: 10px;
         }
         .project-list li {
             background: white;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+        }
+        img.responsive {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 10px;
+            margin-top: 10px;
+            display: block;
+        }
+        /* small screens */
+        @media (max-width:600px) {
+            nav { flex-wrap: wrap; }
+            header { padding: 28px 12px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>My Portfolio</h1>
-        <p>Robotics | Watch Building | Music</p>
+        <h1>Matteo Ghorayeb</h1>
+        <p>Robotics • Watch Building • Music • Maths Challenges</p>
     </header>
 
     <nav>
-        <a href="#robotics">Robotics</a>
-        <a href="#watches">Watch Building</a>
-        <a href="#music">Music</a>
+        <a href="#" onclick="showSection('home'); return false;">Home</a>
+        <a href="#" onclick="showSection('robotics'); return false;">Robotics</a>
+        <a href="#" onclick="showSection('watches'); return false;">Watch Building</a>
+        <a href="#" onclick="showSection('music'); return false;">Music</a>
+        <a href="#" onclick="showSection('maths'); return false;">Maths Challenges</a>
     </nav>
 
     <div class="container">
+        <section id="home">
+            <h2>Welcome</h2>
+            <p>My name is Matteo Ghorayeb. I am an aspiring engineering student with hobbies such as music, sport, robotics, and watchmaking. I have created this website as a way to showcase my journey in pursuing my passion of solving problems and creating things.</p>
+        </section>
+
         <section id="robotics">
             <h2>Robotics Projects</h2>
             <div class="project-list">
                 <ul>
-                    <li><strong>RFID Key Controlled Lock</strong><br>A servo‑powered locking system activated using RFID security tags.</li>
-                    <li><strong>Custom‑Built Taser</strong><br>Designed and built using a voltage multiplier and a custom 3D‑printed CAD case. It includes a safety switch and is rechargeable via USB‑C.<br><img src="./24C5AEBB-A351-4B2D-93A9-F93615C77CBA_1_201_a.jpeg" alt="Taser Project" style="width:100%;max-width:400px;border-radius:10px;margin-top:10px;"></li>
+                    <li class="project-list-item"><strong>RFID Key Controlled Lock</strong><br>A servo‑powered locking system activated using RFID security tags.</li>
+                    <li class="project-list-item"><strong>Custom‑Built Taser</strong><br>Designed and built using a voltage multiplier and a custom 3D‑printed CAD case. It includes a safety switch and is rechargeable via USB‑C.<br><img src="./24C5AEBB-A351-4B2D-93A9-F93615C77CBA_1_201_a.jpeg" alt="Taser Project" class="responsive"></li>
                 </ul>
             </div>
+        </section>
+
+        <section id="maths">
+            <h2>Maths Challenges</h2>
+            <p>I enjoy solving algorithmic and mathematical problems, particularly on Project Euler where I track my progress.</p>
+            <!-- Replace 'Matteo_G' with your exact Project Euler username if different -->
+            <img src="https://projecteuler.net/profile/Matteo_G.png" alt="Project Euler Stats" class="responsive">
         </section>
 
         <section id="watches">
             <h2>Watch Building</h2>
             <p>I co-founded a watch business where we use Seiko parts to build custom watches made to order.</p>
-            <img src="IMG_4724.JPG" alt="Watch Project" style="width:100%;max-width:400px;border-radius:10px;margin-top:10px;">
+            <img src="IMG_4724.JPG" alt="Watch Project" class="responsive">
         </section>
 
         <section id="music">
@@ -86,7 +125,28 @@
             <p>I hold a Grade 7 piano certification and am passionate about learning guitar. I am also actively involved in my school’s jazz band, where I have performed at the Bahrain Jazz Festival multiple times.</p>
         </section>
     </div>
+
+    <script>
+        // single, well-formed showSection function
+        function showSection(id) {
+            // hide all sections
+            document.querySelectorAll('section').forEach(function(sec) {
+                sec.style.display = 'none';
+            });
+            // show chosen section if it exists
+            var el = document.getElementById(id);
+            if (el) el.style.display = 'block';
+            // smooth scroll to top
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Show home by default when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('home');
+        });
+    </script>
 </body>
 </html>
+
 
 
